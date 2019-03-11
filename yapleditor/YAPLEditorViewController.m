@@ -136,7 +136,15 @@
 
 - (void)setPropertyList:(id)inPropertyList
 {
-	_rootNode=[[YAPLTreeNode alloc] initWithPropertyList:inPropertyList error:NULL];
+	NSString * tRootItemLabel=nil;
+	
+	if ([self.delegate respondsToSelector:@selector(rootItemLabelInEditorViewController:)]==YES)
+		tRootItemLabel=[self.delegate rootItemLabelInEditorViewController:nil];
+	
+	if (tRootItemLabel==nil)
+		tRootItemLabel=@"Root";
+	
+	_rootNode=[[YAPLTreeNode alloc] initWithPropertyList:inPropertyList rootItemLabel:tRootItemLabel error:NULL];
 	
 	if (self.outlineView!=nil)
 	{
@@ -524,7 +532,10 @@
 - (BOOL)outlineView:(NSOutlineView *)inOutlineView isItemExpandable:(YAPLTreeNode *)inTreeNode
 {
 	if (inTreeNode==nil)
-		return YES;
+		inTreeNode=_rootNode;
+	
+	if (inTreeNode==nil)
+		return NO;
 	
 	YAPLRepresentedObject * tRepresentedObject=inTreeNode.representedObject;
 	

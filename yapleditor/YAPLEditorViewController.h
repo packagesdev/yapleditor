@@ -21,6 +21,8 @@
 
 - (void)editorViewControllerPropertyListDidChange:(YAPLEditorViewController *)inEditorViewController;
 
+- (NSString *)rootItemLabelInEditorViewController:(YAPLEditorViewController *)inEditorViewController;
+
 @end
 
 @interface YAPLEditorViewController : NSViewController
