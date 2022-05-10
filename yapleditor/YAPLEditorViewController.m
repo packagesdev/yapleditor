@@ -188,7 +188,7 @@
 	
 	YAPLTreeNode * tTreeNode=[self.outlineView itemAtRow:tEditedRow];
 	
-	YAPLRepresentedObject * tRepresentedObject=tTreeNode.representedObject;
+	YAPLRepresentedObject * tRepresentedObject=(YAPLRepresentedObject *)tTreeNode.representedObject;
 	
 	NSString * tNewKey=sender.stringValue;
 	
@@ -241,7 +241,7 @@
 	
 	YAPLObjectType tNewType=[sender selectedTag];
 	
-	YAPLRepresentedObject * tRepresentedObject=tTreeNode.representedObject;
+	YAPLRepresentedObject * tRepresentedObject=(YAPLRepresentedObject *)tTreeNode.representedObject;
 	
 	if (tNewType==tRepresentedObject.type)
 		return;
@@ -298,7 +298,7 @@
 	if (tEditedRow==-1)
 		return;
 	
-	YAPLRepresentedObject * tRepresentedObject=((YAPLTreeNode *)[self.outlineView itemAtRow:tEditedRow]).representedObject;
+	YAPLRepresentedObject * tRepresentedObject=(YAPLRepresentedObject *)((YAPLTreeNode *)[self.outlineView itemAtRow:tEditedRow]).representedObject;
 	
 	NSNumber * tNewBoolValue=(sender.state==NSOnState)? @(YES) : @(NO);
 	
@@ -320,7 +320,7 @@
 	if (tEditedRow==-1)
 		return;
 	
-	YAPLRepresentedObject * tRepresentedObject=((YAPLTreeNode *)[self.outlineView itemAtRow:tEditedRow]).representedObject;
+	YAPLRepresentedObject * tRepresentedObject=(YAPLRepresentedObject *)((YAPLTreeNode *)[self.outlineView itemAtRow:tEditedRow]).representedObject;
 	
 	tRepresentedObject.value=sender.objectValue;
 }
@@ -332,7 +332,7 @@
 	if (tEditedRow==-1)
 		return;
 	
-	YAPLRepresentedObject * tRepresentedObject=((YAPLTreeNode *)[self.outlineView itemAtRow:tEditedRow]).representedObject;
+	YAPLRepresentedObject * tRepresentedObject=(YAPLRepresentedObject *)((YAPLTreeNode *)[self.outlineView itemAtRow:tEditedRow]).representedObject;
 	
 	NSNumberFormatter * tFormatter=[NSNumberFormatter new];
 	tFormatter.numberStyle=NSNumberFormatterDecimalStyle;
@@ -361,7 +361,7 @@
 	if (tEditedRow==-1)
 		return;
 	
-	YAPLRepresentedObject * tRepresentedObject=((YAPLTreeNode *)[self.outlineView itemAtRow:tEditedRow]).representedObject;
+	YAPLRepresentedObject * tRepresentedObject=(YAPLRepresentedObject *)((YAPLTreeNode *)[self.outlineView itemAtRow:tEditedRow]).representedObject;
 	
 	tRepresentedObject.value=sender.stringValue;
 }
@@ -400,7 +400,7 @@
 		tInsertionIndex=[tParentTreeNode indexOfChildIdenticalTo:tSelectedTreeNode]+1;
 	}
 	
-	YAPLRepresentedObject * tParentRepresentedObject=tParentTreeNode.representedObject;
+	YAPLRepresentedObject * tParentRepresentedObject=(YAPLRepresentedObject *)tParentTreeNode.representedObject;
 	
 	// => It's either an array or a dictionary
 	
@@ -418,7 +418,7 @@
 		
 		tInterestingChildren=[tInterestingChildren WB_filteredArrayUsingBlock:^BOOL(YAPLTreeNode * bChildTreeNode, NSUInteger bIndex) {
 			
-			YAPLRepresentedObject * tChildRepresentedObject=bChildTreeNode.representedObject;
+			YAPLRepresentedObject * tChildRepresentedObject=(YAPLRepresentedObject *)bChildTreeNode.representedObject;
 			
 			if ([tChildRepresentedObject.key hasPrefix:tSuggestedKey]==NO)
 				return NO;
@@ -446,7 +446,7 @@
 				
 				[tInterestingChildren enumerateObjectsUsingBlock:^(YAPLTreeNode * bChildTreeNode, NSUInteger bIndex, BOOL *bOutStop) {
 					
-					YAPLRepresentedObject * tChildRepresentedObject=bChildTreeNode.representedObject;
+					YAPLRepresentedObject * tChildRepresentedObject=(YAPLRepresentedObject *)bChildTreeNode.representedObject;
 					
 					if ([tChildRepresentedObject.key isEqualToString:tSuggestedKey]==YES)
 					{
@@ -537,7 +537,7 @@
 	if (inTreeNode==nil)
 		return NO;
 	
-	YAPLRepresentedObject * tRepresentedObject=inTreeNode.representedObject;
+	YAPLRepresentedObject * tRepresentedObject=(YAPLRepresentedObject *)inTreeNode.representedObject;
 	
 	YAPLObjectType tType=tRepresentedObject.type;
 	
@@ -554,7 +554,7 @@
 	NSString * tTableColumnIdentifier=inTableColumn.identifier;
 	
 	
-	YAPLRepresentedObject * tRepresentedObject=inTreeNode.representedObject;
+	YAPLRepresentedObject * tRepresentedObject=(YAPLRepresentedObject *)inTreeNode.representedObject;
 	
 	if ([tTableColumnIdentifier isEqualToString:@"item.key"]==YES)
 	{
@@ -608,7 +608,8 @@
 		
 			NSTextField * tTextField=tTableCellView.textField;
 			
-			tTextField.formatter=nil;
+            tTextField.target=self;
+            tTextField.formatter=nil;
 			
 			if (tRepresentedObject.type==YAPLObjectTypeDictionary ||
 				tRepresentedObject.type==YAPLObjectTypeArray)
