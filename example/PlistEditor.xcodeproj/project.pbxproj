@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F404CB95221E14E700437AEA /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = F404CB94221E14E700437AEA /* Property List.plist */; };
+		F46167FA221CD043009A6DB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F46167F9221CD043009A6DB5 /* AppDelegate.m */; };
+		F46167FC221CD043009A6DB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F46167FB221CD043009A6DB5 /* main.m */; };
+		F46167FE221CD043009A6DB5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46167FD221CD043009A6DB5 /* Images.xcassets */; };
+		F4616801221CD043009A6DB5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46167FF221CD043009A6DB5 /* MainMenu.xib */; };
+		F47F561B2224AD4100A66CC6 /* NSArray+WBExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F560F2224AD4100A66CC6 /* NSArray+WBExtensions.m */; };
+		F47F561C2224AD4100A66CC6 /* YAPLBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F56112224AD4100A66CC6 /* YAPLBottomView.m */; };
+		F47F561D2224AD4100A66CC6 /* YAPLCheckboxTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F56132224AD4100A66CC6 /* YAPLCheckboxTableCellView.m */; };
+		F47F561E2224AD4100A66CC6 /* YAPLDatePickerTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F56152224AD4100A66CC6 /* YAPLDatePickerTableCellView.m */; };
+		F47F561F2224AD4100A66CC6 /* YAPLEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F56172224AD4100A66CC6 /* YAPLEditorViewController.m */; };
+		F47F56202224AD4100A66CC6 /* YAPLEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47F56182224AD4100A66CC6 /* YAPLEditorViewController.xib */; };
+		F47F56212224AD4100A66CC6 /* YAPLPopUpButtonTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F561A2224AD4100A66CC6 /* YAPLPopUpButtonTableCellView.m */; };
+		F48754E5282B00E1000FFAEE /* YAPLTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = F48754E4282B00E1000FFAEE /* YAPLTreeNode.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F404CB94221E14E700437AEA /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = SOURCE_ROOT; };
+		F46167F3221CD043009A6DB5 /* PlistEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlistEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46167F7221CD043009A6DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = PlistEditor/Info.plist; sourceTree = SOURCE_ROOT; };
+		F46167F8221CD043009A6DB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PlistEditor/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		F46167F9221CD043009A6DB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PlistEditor/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		F46167FB221CD043009A6DB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PlistEditor/main.m; sourceTree = SOURCE_ROOT; };
+		F46167FD221CD043009A6DB5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F4616800221CD043009A6DB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F47F560E2224AD4100A66CC6 /* NSArray+WBExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+WBExtensions.h"; path = "../yapleditor/NSArray+WBExtensions.h"; sourceTree = SOURCE_ROOT; };
+		F47F560F2224AD4100A66CC6 /* NSArray+WBExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+WBExtensions.m"; path = "../yapleditor/NSArray+WBExtensions.m"; sourceTree = SOURCE_ROOT; };
+		F47F56102224AD4100A66CC6 /* YAPLBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAPLBottomView.h; path = ../yapleditor/YAPLBottomView.h; sourceTree = SOURCE_ROOT; };
+		F47F56112224AD4100A66CC6 /* YAPLBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YAPLBottomView.m; path = ../yapleditor/YAPLBottomView.m; sourceTree = SOURCE_ROOT; };
+		F47F56122224AD4100A66CC6 /* YAPLCheckboxTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAPLCheckboxTableCellView.h; path = ../yapleditor/YAPLCheckboxTableCellView.h; sourceTree = SOURCE_ROOT; };
+		F47F56132224AD4100A66CC6 /* YAPLCheckboxTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YAPLCheckboxTableCellView.m; path = ../yapleditor/YAPLCheckboxTableCellView.m; sourceTree = SOURCE_ROOT; };
+		F47F56142224AD4100A66CC6 /* YAPLDatePickerTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAPLDatePickerTableCellView.h; path = ../yapleditor/YAPLDatePickerTableCellView.h; sourceTree = SOURCE_ROOT; };
+		F47F56152224AD4100A66CC6 /* YAPLDatePickerTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YAPLDatePickerTableCellView.m; path = ../yapleditor/YAPLDatePickerTableCellView.m; sourceTree = SOURCE_ROOT; };
+		F47F56162224AD4100A66CC6 /* YAPLEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAPLEditorViewController.h; path = ../yapleditor/YAPLEditorViewController.h; sourceTree = SOURCE_ROOT; };
+		F47F56172224AD4100A66CC6 /* YAPLEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YAPLEditorViewController.m; path = ../yapleditor/YAPLEditorViewController.m; sourceTree = SOURCE_ROOT; };
+		F47F56182224AD4100A66CC6 /* YAPLEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YAPLEditorViewController.xib; path = ../yapleditor/YAPLEditorViewController.xib; sourceTree = SOURCE_ROOT; };
+		F47F56192224AD4100A66CC6 /* YAPLPopUpButtonTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAPLPopUpButtonTableCellView.h; path = ../yapleditor/YAPLPopUpButtonTableCellView.h; sourceTree = SOURCE_ROOT; };
+		F47F561A2224AD4100A66CC6 /* YAPLPopUpButtonTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YAPLPopUpButtonTableCellView.m; path = ../yapleditor/YAPLPopUpButtonTableCellView.m; sourceTree = SOURCE_ROOT; };
+		F48754E3282B00E1000FFAEE /* YAPLTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YAPLTreeNode.h; path = ../yapleditor/model/YAPLTreeNode.h; sourceTree = SOURCE_ROOT; };
+		F48754E4282B00E1000FFAEE /* YAPLTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YAPLTreeNode.m; path = ../yapleditor/model/YAPLTreeNode.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F46167F0221CD043009A6DB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F404CB89221E0F5C00437AEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F48754E3282B00E1000FFAEE /* YAPLTreeNode.h */,
+				F48754E4282B00E1000FFAEE /* YAPLTreeNode.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F46167EA221CD043009A6DB5 = {
+			isa = PBXGroup;
+			children = (
+				F404CB94221E14E700437AEA /* Property List.plist */,
+				F46167F5221CD043009A6DB5 /* PlistEditor */,
+				F46167F4221CD043009A6DB5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F46167F4221CD043009A6DB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F46167F3221CD043009A6DB5 /* PlistEditor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F46167F5221CD043009A6DB5 /* PlistEditor */ = {
+			isa = PBXGroup;
+			children = (
+				F47F56222224AD4400A66CC6 /* Foundation Extensions */,
+				F47F56242224AD7900A66CC6 /* Controller */,
+				F46167F8221CD043009A6DB5 /* AppDelegate.h */,
+				F46167F9221CD043009A6DB5 /* AppDelegate.m */,
+				F46167FD221CD043009A6DB5 /* Images.xcassets */,
+				F46167FF221CD043009A6DB5 /* MainMenu.xib */,
+				F46167F6221CD043009A6DB5 /* Supporting Files */,
+			);
+			path = PlistEditor;
+			sourceTree = "<group>";
+		};
+		F46167F6221CD043009A6DB5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F46167F7221CD043009A6DB5 /* Info.plist */,
+				F46167FB221CD043009A6DB5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F47F56222224AD4400A66CC6 /* Foundation Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F47F560E2224AD4100A66CC6 /* NSArray+WBExtensions.h */,
+				F47F560F2224AD4100A66CC6 /* NSArray+WBExtensions.m */,
+			);
+			name = "Foundation Extensions";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F47F56232224AD5B00A66CC6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F47F56102224AD4100A66CC6 /* YAPLBottomView.h */,
+				F47F56112224AD4100A66CC6 /* YAPLBottomView.m */,
+				F47F56122224AD4100A66CC6 /* YAPLCheckboxTableCellView.h */,
+				F47F56132224AD4100A66CC6 /* YAPLCheckboxTableCellView.m */,
+				F47F56142224AD4100A66CC6 /* YAPLDatePickerTableCellView.h */,
+				F47F56152224AD4100A66CC6 /* YAPLDatePickerTableCellView.m */,
+				F47F56192224AD4100A66CC6 /* YAPLPopUpButtonTableCellView.h */,
+				F47F561A2224AD4100A66CC6 /* YAPLPopUpButtonTableCellView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F47F56242224AD7900A66CC6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F404CB89221E0F5C00437AEA /* Model */,
+				F47F56232224AD5B00A66CC6 /* Views */,
+				F47F56162224AD4100A66CC6 /* YAPLEditorViewController.h */,
+				F47F56172224AD4100A66CC6 /* YAPLEditorViewController.m */,
+				F47F56252224AD8500A66CC6 /* Resources */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F47F56252224AD8500A66CC6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F47F56182224AD4100A66CC6 /* YAPLEditorViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F46167F2221CD043009A6DB5 /* PlistEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4616810221CD043009A6DB5 /* Build configuration list for PBXNativeTarget "PlistEditor" */;
+			buildPhases = (
+				F46167EF221CD043009A6DB5 /* Sources */,
+				F46167F0221CD043009A6DB5 /* Frameworks */,
+				F46167F1221CD043009A6DB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlistEditor;
+			productName = PlistEditor;
+			productReference = F46167F3221CD043009A6DB5 /* PlistEditor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F46167EB221CD043009A6DB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = WhiteBox;
+				TargetAttributes = {
+					F46167F2221CD043009A6DB5 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = F46167EE221CD043009A6DB5 /* Build configuration list for PBXProject "PlistEditor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F46167EA221CD043009A6DB5;
+			productRefGroup = F46167F4221CD043009A6DB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F46167F2221CD043009A6DB5 /* PlistEditor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F46167F1221CD043009A6DB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F46167FE221CD043009A6DB5 /* Images.xcassets in Resources */,
+				F47F56202224AD4100A66CC6 /* YAPLEditorViewController.xib in Resources */,
+				F4616801221CD043009A6DB5 /* MainMenu.xib in Resources */,
+				F404CB95221E14E700437AEA /* Property List.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F46167EF221CD043009A6DB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F46167FC221CD043009A6DB5 /* main.m in Sources */,
+				F47F561F2224AD4100A66CC6 /* YAPLEditorViewController.m in Sources */,
+				F47F561B2224AD4100A66CC6 /* NSArray+WBExtensions.m in Sources */,
+				F47F56212224AD4100A66CC6 /* YAPLPopUpButtonTableCellView.m in Sources */,
+				F47F561D2224AD4100A66CC6 /* YAPLCheckboxTableCellView.m in Sources */,
+				F48754E5282B00E1000FFAEE /* YAPLTreeNode.m in Sources */,
+				F46167FA221CD043009A6DB5 /* AppDelegate.m in Sources */,
+				F47F561E2224AD4100A66CC6 /* YAPLDatePickerTableCellView.m in Sources */,
+				F47F561C2224AD4100A66CC6 /* YAPLBottomView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F46167FF221CD043009A6DB5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4616800221CD043009A6DB5 /* Base */,
+			);
+			name = MainMenu.xib;
+			path = PlistEditor;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F461680E221CD043009A6DB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F461680F221CD043009A6DB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F4616811221CD043009A6DB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PlistEditor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F4616812221CD043009A6DB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PlistEditor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F46167EE221CD043009A6DB5 /* Build configuration list for PBXProject "PlistEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F461680E221CD043009A6DB5 /* Debug */,
+				F461680F221CD043009A6DB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4616810221CD043009A6DB5 /* Build configuration list for PBXNativeTarget "PlistEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4616811221CD043009A6DB5 /* Debug */,
+				F4616812221CD043009A6DB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F46167EB221CD043009A6DB5 /* Project object */;
+}
