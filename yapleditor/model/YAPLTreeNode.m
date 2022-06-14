@@ -455,7 +455,7 @@
 	
 	__block BOOL tInserted=NO;
 	
-	[_children enumerateObjectsUsingBlock:^(YAPLTreeNode * bTreeNode,NSUInteger bIndex,BOOL * bOutStop){
+	[inChildren enumerateObjectsUsingBlock:^(YAPLTreeNode * bTreeNode,NSUInteger bIndex,BOOL * bOutStop){
 		
 		if (inComparator(self,bTreeNode)!=NSOrderedDescending)
 		{
