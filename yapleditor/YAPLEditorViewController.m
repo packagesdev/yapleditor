@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2019, Stephane Sudre
+ Copyright (c) 2019-2024, Stephane Sudre
  All rights reserved.
  
  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -137,21 +137,24 @@
 - (void)setPropertyList:(id)inPropertyList
 {
 	NSString * tRootItemLabel=nil;
-	
-	if ([self.delegate respondsToSelector:@selector(rootItemLabelInEditorViewController:)]==YES)
-		tRootItemLabel=[self.delegate rootItemLabelInEditorViewController:nil];
+    id<YAPLEditorViewControllerDelegate> delegate = self.delegate;
+    
+    if ([delegate respondsToSelector:@selector(rootItemLabelInEditorViewController:)]==YES)
+		tRootItemLabel=[delegate rootItemLabelInEditorViewController:nil];
 	
 	if (tRootItemLabel==nil)
 		tRootItemLabel=@"Root";
 	
 	_rootNode=[[YAPLTreeNode alloc] initWithPropertyList:inPropertyList rootItemLabel:tRootItemLabel error:NULL];
 	
-	if (self.outlineView!=nil)
+    NSOutlineView * outlineView=self.outlineView;
+    
+    if (outlineView!=nil)
 	{
-		[self.outlineView reloadData];
+		[outlineView reloadData];
 	
 		if (_rootNode!=nil)
-			[self.outlineView expandItem:[self.outlineView itemAtRow:0]];
+			[outlineView expandItem:[outlineView itemAtRow:0]];
 	}
 }
 
@@ -181,7 +184,7 @@
 
 - (IBAction)setKey:(NSTextField *)sender
 {
-	NSUInteger tEditedRow=[self.outlineView rowForView:sender];
+	NSInteger tEditedRow=[self.outlineView rowForView:sender];
 	
 	if (tEditedRow==-1)
 		return;
@@ -227,19 +230,20 @@
 	
 	NSInteger tNewSelectedRow=[self.outlineView rowForItem:tTreeNode];
 	
-	[self.outlineView selectRowIndexes:[NSIndexSet indexSetWithIndex:tNewSelectedRow] byExtendingSelection:NO];
+    if (tNewSelectedRow>=0)
+        [self.outlineView selectRowIndexes:[NSIndexSet indexSetWithIndex:(NSUInteger)tNewSelectedRow] byExtendingSelection:NO];
 }
 
 - (IBAction)switchItemType:(NSPopUpButton *)sender
 {
-	NSUInteger tEditedRow=[self.outlineView rowForView:sender];
+	NSInteger tEditedRow=[self.outlineView rowForView:sender];
 	
 	if (tEditedRow==-1)
 		return;
 	
 	YAPLTreeNode * tTreeNode=[self.outlineView itemAtRow:tEditedRow];
 	
-	YAPLObjectType tNewType=[sender selectedTag];
+	YAPLObjectType tNewType=(YAPLObjectType)sender.selectedTag;
 	
 	YAPLRepresentedObject * tRepresentedObject=(YAPLRepresentedObject *)tTreeNode.representedObject;
 	
@@ -293,7 +297,7 @@
 
 - (IBAction)setBooleanValue:(NSButton *)sender
 {
-	NSUInteger tEditedRow=[self.outlineView rowForView:sender];
+	NSInteger tEditedRow=[self.outlineView rowForView:sender];
 	
 	if (tEditedRow==-1)
 		return;
@@ -315,7 +319,7 @@
 
 - (IBAction)setDateValue:(NSTextField *)sender
 {
-	NSUInteger tEditedRow=[self.outlineView rowForView:sender];
+	NSInteger tEditedRow=[self.outlineView rowForView:sender];
 	
 	if (tEditedRow==-1)
 		return;
@@ -327,7 +331,7 @@
 
 - (IBAction)setNumberValue:(NSTextField *)sender
 {
-	NSUInteger tEditedRow=[self.outlineView rowForView:sender];
+	NSInteger tEditedRow=[self.outlineView rowForView:sender];
 	
 	if (tEditedRow==-1)
 		return;
@@ -341,7 +345,7 @@
 	
 	if ([tFormatter numberFromString:sender.stringValue]==nil)
 	{
-		NSBeep ();
+		NSBeep();
 		
 		[self.outlineView editColumn:[self.outlineView columnWithIdentifier:@"item.value"]
 							 row:tEditedRow
@@ -356,7 +360,7 @@
 
 - (IBAction)setStringValue:(NSTextField *)sender
 {
-	NSUInteger tEditedRow=[self.outlineView rowForView:sender];
+	NSInteger tEditedRow=[self.outlineView rowForView:sender];
 	
 	if (tEditedRow==-1)
 		return;
@@ -477,12 +481,15 @@
 	
 	NSInteger tNewSelectedRow=[self.outlineView rowForItem:tNewNode];
 	
-	[self.outlineView selectRowIndexes:[NSIndexSet indexSetWithIndex:tNewSelectedRow] byExtendingSelection:NO];
+    if (tNewSelectedRow>=0)
+    {
+        [self.outlineView selectRowIndexes:[NSIndexSet indexSetWithIndex:(NSUInteger)tNewSelectedRow] byExtendingSelection:NO];
 	
-	[self.outlineView editColumn:[self.outlineView columnWithIdentifier:(tParentRepresentedObject.type==YAPLObjectTypeArray) ? @"item.value" : @"item.key"]
-						 row:tNewSelectedRow
-				   withEvent:nil
-					  select:YES];
+        [self.outlineView editColumn:[self.outlineView columnWithIdentifier:(tParentRepresentedObject.type==YAPLObjectTypeArray) ? @"item.value" : @"item.key"]
+                             row:tNewSelectedRow
+                       withEvent:nil
+                          select:YES];
+    }
 }
 
 - (IBAction)delete:(id)sender
@@ -496,7 +503,7 @@
 		if (bIndex==0)
 			return;
 		
-		id tItem=[self.outlineView itemAtRow:bIndex];
+		id tItem=[self.outlineView itemAtRow:(NSInteger)bIndex];
 		
 		[tSelectedItems addObject:tItem];
 	}];
@@ -518,15 +525,18 @@
 	if (inTreeNode==nil)
 		return 1;
 	
-	return inTreeNode.numberOfChildren;
+	return (NSInteger)inTreeNode.numberOfChildren;
 }
 
 - (id)outlineView:(NSOutlineView *)inOutlineView child:(NSInteger)inIndex ofItem:(YAPLTreeNode *)inTreeNode
 {
+    if (inIndex<0)
+        return nil;
+    
 	if (inTreeNode==nil)
 		return _rootNode;
 	
-	return [inTreeNode childNodeAtIndex:inIndex];
+	return [inTreeNode childNodeAtIndex:(NSUInteger)inIndex];
 }
 
 - (BOOL)outlineView:(NSOutlineView *)inOutlineView isItemExpandable:(YAPLTreeNode *)inTreeNode
